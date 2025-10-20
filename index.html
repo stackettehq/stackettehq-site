@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stackette HQ — Build softly. Launch boldly.</title>
+  <meta name="description" content="Stackette HQ — experiments, micro-SaaS projects, and the Sparkettes newsletter for creative builders." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0B0B0F; --panel:#11111A; --text:#F5F3F7; --muted:#CFC7DA; --border:#2B2B33; --accent:#7B61FF; --accent-2:#6A52E0; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"PT Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{color:var(--accent-2)}
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
+    .chip{font-size:12px;border:1px solid var(--border);padding:4px 8px;border-radius:9999px;color:var(--muted)}
+    .hero{padding:48px 0 24px;display:grid;gap:16px}
+    h1{font-size:40px;line-height:1.1;margin:0}
+    .accent{background:linear-gradient(90deg,var(--accent),#C48BFF);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sub{color:var(--muted);max-width:60ch}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+    .btn{background:var(--accent);color:#fff;border:0;border-radius:12px;padding:12px 18px;font-weight:700;cursor:pointer}
+    .btn:hover{background:var(--accent-2)}
+    .btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+    .panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px;transition:all .3s ease-in-out}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .kicker{font-size:13px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+    .list{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:8px;color:var(--muted)}
+    .footer{margin:56px 0 24px;color:var(--muted);font-size:14px;text-align:center}
+    .signup{margin-top:8px}
+    .beehiiv-wrap{background:transparent;border:0;padding:0;display:block;width:100%}
+
+    /* Reusable gradient title + shimmer line (About, Projects, Newsletter) */
+    .section-title{
+      background:linear-gradient(90deg,#C084FC,#E879F9);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      font-weight:700;
+      letter-spacing:.02em;
+      margin:6px 0 10px;
+      position:relative;
+    }
+    .section-title::before{
+      content:"";
+      display:block;
+      width:64px;height:2px;
+      margin-bottom:10px;border-radius:9999px;
+      background:linear-gradient(90deg,rgba(192,132,252,0.8),rgba(232,121,249,0.6));
+      box-shadow:0 0 8px rgba(181,145,255,0.4);
+    }
+
+    /* Responsive */
+    @media (max-width:768px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:32px}
+      .wrap{padding:20px}
+    }
+
+    /* Beehiiv niceties (best effort; iframe is sandboxed) */
+    .beehiiv-embed p:last-of-type{
+      text-align:center;  
+      margin-top:1rem;
+      font-size:0.85rem;
+      color:#aaa;
+    }
+    .beehiiv-embed input{
+      width:100%;
+      box-sizing:border-box;
+      padding-right:1.5rem;
+    }
+
+    /* ✨ Soft glowing panel hover effect */
+    .panel:hover{
+      border-color:#b591ff;
+      box-shadow:0 0 22px -8px rgba(181,145,255,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    
+<!-- Header -->
+<header class="nav">  
+  <div class="brand">   
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" stroke="var(--accent)" stroke-width="2"/>
+      <path d="M7 14l3-6 3 6 3-6" stroke="var(--accent)" stroke-width="2" fill="none" />
+    </svg>
+    Stackette HQ
+    <span class="chip">Indie SaaS Lab</span>
+  </div>
+  <nav>
+    <a href="#projects">Projects</a>
+    &nbsp;•&nbsp;
+    <a href="#newsletter">Newsletter</a>
+    &nbsp;•&nbsp;
+    <a href="#about">About Stackette</a>
+    &nbsp;•&nbsp;
+    <a href="about.html">Founder's Message</a>
+  </nav>
+</header>
+    
+    <!-- Hero -->
+    <section class="hero">
+      <h1><span class="accent">Build softly.</span> Launch boldly.</h1>
+      <div class="cta-row">
+        <a class="btn" href="#newsletter">Join the Sparkettes ✨</a>
+        <a class="btn ghost" href="#projects">See current projects</a>
+      </div>
+    </section>
+
+    <!-- Main Grid -->
+    <section class="grid">
+      <!-- Projects -->
+<article id="projects" class="panel">
+  <div class="kicker">Now Building</div>
+  <h2 class="section-title">Projects in the lab</h2>
+
+  <ul class="list">
+    <li>
+      <strong>
+        <a href="pingparcel/" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;">
+          PingParcel
+        </a>
+      </strong>
+      — Shopify app that answers “Where’s my order?” automatically using live tracking, policy snippets, and on-brand replies.
+      <em style="color:#9b8fd1;">(MVP)</em>
+    </li>
+
+    <li>
+      <strong>
+        <a href="https://sparklog.stackettehq.com" target="_blank" rel="noreferrer"
+           style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;">
+          Sparklog
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               class="spark-icon">
+            <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      </strong>
+      — a simple, fast “Today I Learned” tracker with tags, search, dark mode, and mobile-friendly UI.
+    </li>
+
+    <li>
+      <strong><a href="#newsletter">Stackette Spark</a></strong>
+      — a cozy newsletter for builders with taste and curiosity.
+    </li>
+  </ul>
+
+  <style>
+    /* Sparklog icon glow on hover */
+    #projects a:hover .spark-icon{
+      stroke:url(#spark-gradient);
+      filter:drop-shadow(0 0 6px #a855f7aa);
+      transition:all .3s ease;
+    }
+    #projects a .spark-icon{transition:all .3s ease;opacity:.75}
+  </style>
+  <svg width="0" height="0" aria-hidden="true">
+    <defs>
+      <linearGradient id="spark-gradient" x1="0" y1="0" x2="24" y2="24">
+        <stop stop-color="#C084FC" />
+        <stop offset="1" stop-color="#7B61FF" />
+      </linearGradient>
+    </defs>
+  </svg>
+</article>                     
+      <!-- Newsletter -->
+      <article id="newsletter" class="panel">
+        <div class="kicker">Newsletter</div>
+        <h2 class="section-title">Stay in the Spark — a newsletter for bold, beautiful builders</h2>
+        <p class="sub" style="margin:0 0 12px">
+          Twice a month: quick insights, design-first SaaS lessons, and early-access invites.
+        </p>
+        <div class="signup">
+         <div class="beehiiv-wrap">
+            <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+            <iframe
+              src="https://subscribe-forms.beehiiv.com/ed6f5995-6d5f-459e-a4a3-a079921f344c"
+              class="beehiiv-embed"
+              data-test-id="beehiiv-embed"
+              frameborder="0"
+              scrolling="no"
+              style="width: 999px; height: 376px; margin: 0; border-radius: 12px !important;
+                     background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;">
+            </iframe>
+          </div>
+          <p class="sub" style="font-size:12px;margin-top:8px">No spam. One-click unsubscribe.</p>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- About / What is Stackette HQ (below grid) -->
+    <article id="about" class="panel" style="margin-top:16px">
+      <div class="kicker">About</div>
+      <h2 class="section-title">What is Stackette HQ</h2>
+      <div class="sub" style="display:grid; gap:10px">
+        <p><strong>Stackette HQ</strong> is a women-owned, bootstrapped studio building beautiful micro-SaaS apps from a feminine perspective.</p>
+        <p>The name <em>Stackette</em> comes from software “stacks” and SaaS — a nod to how we build lightweight, scalable tools that serve real people, not just vanity metrics.</p>
+        <p>We create design-first software that turns everyday ideas into profitable products, managing the full product lifecycle from spark to scale.</p>
+        <p>Each app is crafted with intention, validated with real users, and grown into a sustainable digital product — one elegant release at a time.</p>
+      </div>   
+    </article>
+            
+    <!-- Footer -->
+    <footer class="footer">
+      © <span id="y"></span> Stackette HQ · Built with care · <a href="mailto:stackettehq@yahoo.com">stackettehq@yahoo.com</a>
+    </footer>
+  </div>
+        
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

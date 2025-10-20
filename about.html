@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Founder's Message — Stackette HQ</title>
+  <meta name="description" content="A note from the founder of Stackette HQ — the indie SaaS lab built softly and launched boldly." />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0B0B0F;
+      --panel:#11111A;
+      --text:#F5F3F7;
+      --muted:#CFC7DA;
+      --border:#2B2B33;
+      --accent:#A865E1;
+      --accent-2:#C084FC;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"PT Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      padding:48px 24px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    main{
+      max-width:720px;
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:32px 28px;
+      box-shadow:0 0 24px -12px rgba(171,120,255,0.3);
+      animation:fadeIn .8s ease-out;
+    }
+    h1{
+      font-size:2rem;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      -webkit-background-clip:text;
+      color:transparent;
+      margin-bottom:12px;
+    }
+    h2{
+      font-size:1.25rem;
+      color:var(--muted);
+      font-weight:400;
+      margin-top:0;
+      margin-bottom:24px;
+    }
+    p{margin:14px 0;color:var(--text);}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{color:var(--accent-2);}
+    .footer{
+      text-align:center;
+      margin-top:40px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(10px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+.founder-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.founder-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+.founder-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 20px -6px rgba(168,101,225,0.5);
+}
+  </style>
+</head>
+<body>
+  <main>
+<div class="founder-header">
+  <div class="founder-text">
+    <h1>Founder's Message</h1>
+    <h2>From Brittny, creator of Stackette HQ 💫</h2>
+  </div>
+  <img src="founder02.PNG" alt="Photo of Brittny, Founder of Stackette HQ" class="founder-photo" />
+</div>
+    <p>
+      When I started Stackette HQ, I wanted to build something that made software
+      feel softer — a space where beauty, clarity, and purpose coexist with code.
+      So much of tech feels cold and mechanical, but I believe creation should feel human.
+    </p>
+
+    <p>
+      Stackette is my way of showing that thoughtful design and small, meaningful
+      tools can make an outsized impact. Each project is an experiment in simplicity —
+      not just what technology can do, but how it can make people feel.
+    </p>
+
+    <p>
+      Thank you for being part of this journey. Whether you’re a builder, dreamer,
+      or quietly curious observer — you’re welcome here.
+    </p>
+
+    <p style="margin-top:2rem;">
+      <a href="index.html">← Back to Home</a>
+    </p>
+  </main>
+
+  <div class="footer">
+    © <span id="y"></span> Stackette HQ · Build softly. Launch boldly.
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
