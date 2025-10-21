@@ -213,6 +213,21 @@
       transition:all .3s ease;
     }
     #projects a .spark-icon{transition:all .3s ease;opacity:.75}
+
+    /* Substack embed: dark-friendly, centered, responsive */
+.substack-embed{display:flex;justify-content:center}
+.substack-embed iframe{
+  width:100%;
+  max-width:520px;
+  height:160px;               /* fits Substack’s form */
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:transparent;
+}
+@media (max-width:480px){
+  .substack-embed iframe{height:180px} /* a bit taller for mobile keyboards */
+}
+
   </style>
   <svg width="0" height="0" aria-hidden="true">
     <defs>
@@ -224,29 +239,28 @@
   </svg>
 </article>                     
       <!-- Newsletter -->
-      <article id="newsletter" class="panel">
-        <div class="kicker">Newsletter</div>
-        <h2 class="section-title">Stay in the Spark — a newsletter for bold, beautiful builders</h2>
-        <p class="sub" style="margin:0 0 12px">
-          Twice a month: quick insights, design-first SaaS lessons, and early-access invites.
-        </p>
-        <div class="signup">
-         <div class="beehiiv-wrap">
-            <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
-            <iframe
-              src="https://subscribe-forms.beehiiv.com/ed6f5995-6d5f-459e-a4a3-a079921f344c"
-              class="beehiiv-embed"
-              data-test-id="beehiiv-embed"
-              frameborder="0"
-              scrolling="no"
-              style="width: 999px; height: 376px; margin: 0; border-radius: 12px !important;
-                     background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;">
-            </iframe>
-          </div>
-          <p class="sub" style="font-size:12px;margin-top:8px">No spam. One-click unsubscribe.</p>
-        </div>
-      </article>
-    </section>
+ <article id="newsletter" class="panel">
+  <div class="kicker">Newsletter</div>
+  <h2 class="section-title">Stackette Spark</h2>
+  <p class="sub" style="margin:0 0 12px">
+    Notes from Stackette HQ — calm ideas, creative builds, and quiet experiments.
+  </p>
+
+  <div class="signup">
+    <div class="substack-embed">
+      <iframe
+        src="https://stackette.substack.com/embed"
+        scrolling="no"
+        frameborder="0">
+      </iframe>
+    </div>
+
+    <p class="sub" style="font-size:12px;margin-top:8px">
+      Prefer the web version?
+      <a href="https://stackette.substack.com" target="_blank" rel="noreferrer">Read on Substack</a>.
+    </p>
+  </div>
+</article>
 
 
     <!-- About / What is Stackette HQ (below grid) -->
